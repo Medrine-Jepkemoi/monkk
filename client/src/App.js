@@ -1,7 +1,10 @@
-import Signup from "./components/Signup";
+import TextInput from "./components/TextInput";
+import SignUp from "./pages/SignUp";
+
+
 function App() {
   return (
-    <Signup/>
+    <SignUp/>
   );
 }
 
