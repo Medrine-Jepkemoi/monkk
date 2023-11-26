@@ -8,7 +8,7 @@ export default function TextInput(props) {
       value={props.value}
       placeholder={props.placeholder}
       onChange={props.onChange}
-      className="rounded-md border-2  border-black w-60 h-12 "
+      className="rounded-lg border-2  border-black w-60 h-12 "
     />
   );
 }
