@@ -1,32 +1,94 @@
 import React, { useState } from "react";
 import TextInput from "../components/TextInput";
 import AuthenticationBtn from "../components/AuthenticationBtn";
+import AuthImage from "./images/authentication.png";
+import MonkBadge from "./images/monkbadge.png"
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
-  const handleOnChange = (e) => {
+  const handleFirstName = (e) => {
     setFirstName(e.target.value);
+  };
+  const handleLastName = (e) => {
+    setLastName(e.target.value);
+  };
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+  const handlePhoneNumber = (e) => {
+    setPhoneNumber(e.target.value);
   };
 
   const handleSignup = (e) => {
-    e.preventDefault()
-    console.log("Login button clicked")
-
-  }
+    e.preventDefault();
+    console.log("Login button clicked");
+  };
 
   return (
-    <div>
-      <form action="">
-        <TextInput
-          id={1}
-          type="text"
-          value={firstName}
-          placeholder="firstname"
-          onChange={handleOnChange}
-        />
-        <AuthenticationBtn id={1} clickHandler={handleSignup} value= "Signup" />
-      </form>
+    <div className="flex h-screen w-screen">
+      <div className="h-full w-1/2 ">
+        <div className="flex h-1/6 py-8 pl-3">
+            <img src={MonkBadge} alt="Monk Badge" className=" h-8 w-32 "/>
+        </div> 
+        <form
+          action=""
+          className=" h-5/6 flex flex-col items-center justify-center space-y-4"
+        >
+          <p className="font-semibold font-mono font text-2xl">Welcome to MONK’s COLLECTION</p>
+          <TextInput
+            id={1}
+            type="text"
+            value={firstName}
+            placeholder="Enter your first name"
+            onChange={handleFirstName}
+          />
+          <TextInput
+            id={2}
+            type="text"
+            value={lastName}
+            placeholder="Enter your last name"
+            onChange={handleLastName}
+          />
+          <TextInput
+            id={3}
+            type="text"
+            value={email}
+            placeholder="Enter your email"
+            onChange={handleEmail}
+          />
+          <TextInput
+            id={4}
+            type="text"
+            value={password}
+            placeholder="Enter your password"
+            onChange={handlePassword}
+          />
+          <TextInput
+            id={5}
+            type="text"
+            value={phoneNumber}
+            placeholder="Enter your phone number"
+            onChange={handlePhoneNumber}
+          />
+          <a href="" className="text-slate-400 text-start">Already have an account? Login</a>
+          <AuthenticationBtn
+            id={1}
+            clickHandler={handleSignup}
+            value="Signup"
+          />
+        </form>
+      </div>
+      <div className="h-full w-1/2">
+        <img src={AuthImage} alt="Authentication Image" />
+      </div>
     </div>
   );
 };
