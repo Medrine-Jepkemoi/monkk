@@ -50,7 +50,7 @@ const Login = () => {
           <AuthenticationBtn
             id={1}
             clickHandler={handleLogin}
-            value="Signup"
+            value="Login"
           />
         </form>
       </div>
