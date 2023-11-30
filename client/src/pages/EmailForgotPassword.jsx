@@ -4,6 +4,8 @@ import AuthenticationBtn from "../components/AuthenticationBtn";
 import AuthImage from "./images/authentication.png";
 import MonkBadge from "./images/monkbadge.png";
 import { IoIosArrowRoundBack } from "react-icons/io";
+import {Link} from 'react-router-dom'
+
 
 const EmailForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -46,9 +48,11 @@ const EmailForgotPassword = () => {
           />
           <div className="flex justify-center items-center space-x-2 text-gray-400">
             <IoIosArrowRoundBack />
-            <a href="" className=" text-start">
-              Return to Login
-            </a>
+            <Link to="/">
+              <a href="" className=" text-start">
+                Return to Login
+              </a>
+            </Link>
           </div>
         </div>
       </div>

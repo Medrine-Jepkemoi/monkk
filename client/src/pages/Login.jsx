@@ -3,6 +3,7 @@ import TextInput from "../components/TextInput";
 import AuthenticationBtn from "../components/AuthenticationBtn";
 import AuthImage from "./images/authentication.png";
 import MonkBadge from "./images/monkbadge.png";
+import {Link} from 'react-router-dom'
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -60,9 +61,11 @@ const Login = () => {
             placeholder="Enter your password"
             onChange={handlePassword}
           />
-          <a href="" className="text-slate-400 text-start">
-            Forgot Password?
-          </a>
+          <Link to="/login/forgotpassword">
+            <a href="" className="text-slate-400 text-start">
+              Forgot Password?
+            </a>
+          </Link>
           <AuthenticationBtn id={1} clickHandler={handleLogin} value="Login" />
         </form>
       </div>

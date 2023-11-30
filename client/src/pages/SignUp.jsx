@@ -3,6 +3,7 @@ import TextInput from "../components/TextInput";
 import AuthenticationBtn from "../components/AuthenticationBtn";
 import AuthImage from "./images/authentication.png";
 import MonkBadge from "./images/monkbadge.png";
+import {Link} from 'react-router-dom'
 
 const SignUp = () => {
 
@@ -97,9 +98,12 @@ const SignUp = () => {
             placeholder="Enter your phone number"
             onChange={handlePhoneNumber}
           />
-          <a href="" className="text-slate-400 text-start">
-            Already have an account? Login
-          </a>
+          <Link to="/login">
+            <a href="" className="text-slate-400 text-start">
+              Already have an account? Login
+            </a>
+          </Link>
+          
           <AuthenticationBtn
             id={1}
             clickHandler={handleSignup}

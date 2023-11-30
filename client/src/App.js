@@ -3,14 +3,26 @@ import EmailForgotPassword from "./pages/EmailForgotPassword";
 import Login from "./pages/Login";
 import ResetPassword from "./pages/ResetPassword";
 import SignUp from "./pages/SignUp";
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 
 function App() {
   return (
-    // <Login/>
-    // <SignUp/>
+
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<SignUp/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/login/forgotpassword" element={<EmailForgotPassword/>}/>
+        </Routes>
+      </Router>
+      
+    {/* <SignUp/>
     <EmailForgotPassword/>
-    // <ResetPassword/>
+    <ResetPassword/> */}
+    </div>
+
   );
 }
 
