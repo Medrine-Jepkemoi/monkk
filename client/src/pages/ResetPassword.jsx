@@ -61,7 +61,7 @@ const ResetPassword = () => {
           />
           <div className="flex justify-center items-center space-x-2 text-gray-400">
             <IoIosArrowRoundBack />
-            <Link to="/">
+            <Link to="/login">
               <a href="" className=" text-start">
                 Return to Login
               </a>
