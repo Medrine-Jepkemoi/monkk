@@ -1,3 +1,4 @@
+import NavBar from "./components/NavBar";
 import TextInput from "./components/TextInput";
 import EmailForgotPassword from "./pages/EmailForgotPassword";
 import Login from "./pages/Login";
@@ -10,13 +11,16 @@ function App() {
   return (
 
     <div>
-      <Router>
+      <NavBar/>
+      {/* <Router>
         <Routes>
           <Route path="/" element={<SignUp/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/login/forgotpassword" element={<EmailForgotPassword/>}/>
         </Routes>
-      </Router>
+      </Router> */}
+
+      
       
     {/* <SignUp/>
     <EmailForgotPassword/>
