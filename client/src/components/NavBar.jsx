@@ -12,6 +12,9 @@ const NavBar = () => {
         <img src={MonkBadge} alt="" className="h-8 w-32" />
       </div>
       <ul className="h-16 flex justify-center items-center space-x-6 text-base font-bold ">
+      <li className="hover:text-slate-200">
+          <Link to="/">Home</Link>
+        </li>
         <li className="hover:text-slate-200">
           <Link to="/aboutus">About Us</Link>
         </li>
