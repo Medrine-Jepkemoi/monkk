@@ -1,18 +1,19 @@
-import NavBar from "./components/NavBar";
-import TextInput from "./components/TextInput";
+// import NavBar from "./components/NavBar";
+// import TextInput from "./components/TextInput";
 import AboutUs from "./pages/AboutUs";
-import EmailForgotPassword from "./pages/EmailForgotPassword";
+// import EmailForgotPassword from "./pages/EmailForgotPassword";
+// import Login from "./pages/Login";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
 import Products from "./pages/Products";
-import ResetPassword from "./pages/ResetPassword";
-import SignUp from "./pages/SignUp";
+// import ResetPassword from "./pages/ResetPassword";
+// import SignUp from "./pages/SignUp";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
+    
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
 
       <Routes>
         {/* <Route path="/" element={<SignUp/>}/>
