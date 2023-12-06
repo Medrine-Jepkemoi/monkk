@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TextInput from "../components/TextInput";
 import AuthenticationBtn from "../components/AuthenticationBtn";
-import AuthImage from "./images/authentication.png";
+import AuthImage from "./images/fullimg.png";
 import MonkBadge from "./images/monkbadge.png";
 import {Link} from 'react-router-dom'
 
