@@ -12,10 +12,12 @@ const Products = () => {
   return (
     <div className="h-screen ">
       <NavBar className="h-1/6 bg-slate-300" />
-      <div className="h-1/6 bg-red-300 mx-4">
-        <p>THE MONK’s COLLECTION</p>
+      <div className="h-1/6 bg-gray-200 mx-4 pt-8">
+        <p className="text-center text-4xl font-extrabold">
+          THE MONK’s COLLECTION
+        </p>
       </div>
-      <div className="flex h-4/6 mx-4 my-2">
+      <div className="flex h-4/6 mx-4 my-2 gap-12">
         <ProductCard
           src={HoodImg}
           alt="Hood Image"
@@ -33,9 +35,6 @@ const Products = () => {
           id={2}
           clickHandler={buy}
         />
-
-        
-
       </div>
     </div>
   );
