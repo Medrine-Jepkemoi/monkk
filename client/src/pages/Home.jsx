@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div style={{ backgroundImage: `url(${HomeImage})` }} className="h-screen w-screen bg-no-repeat bg-cover overflow-hidden " >
       <NavBar />
-      <div >Home</div>
+      <div >Home.</div>
     </div>
   );
 };
