@@ -22,7 +22,7 @@ const Home = () => {
       // bg-gradient-to-r from-gray-400 to-gray-200
     >
       <NavBar />
-      <div className="pl-8  w-full h-full flex flex-col items-start justify-center  ">
+      <div className="pl-8  w-full h-[90%] flex flex-col items-start justify-center  ">
         <p className="text-white text-lg">
           At Monk we believe in{" "}
           <span className="text-yellow-400">Kindness</span> &{" "}
@@ -38,6 +38,9 @@ const Home = () => {
           </button>
         </Link>
       </div>
+      {/* <div className="bg-red-200 h-[100vh]">
+
+      </div> */}
     </div>
   );
 };
