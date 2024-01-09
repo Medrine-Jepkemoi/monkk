@@ -1,7 +1,7 @@
 import React from "react";
-import HomeImage from "./images/homeimg.png";
+import HomeImage from '../assets/images/homeimg.png';
 import NavBar from "../components/NavBar";
-import BuyYIcon from "./images/buyYIcon.svg";
+import BuyYIcon from '../assets/images/buyYIcon.svg';
 import { Link } from "react-router-dom";
 
 const Home = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import BuyIcon from  "./images/buyIcon.svg"
+import BuyIcon from "../assets/images/buyIcon.svg" 
 
 const ProductCard = (props) => {
   return (

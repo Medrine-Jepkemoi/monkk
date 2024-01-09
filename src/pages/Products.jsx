@@ -1,7 +1,7 @@
 import React from "react";
 import ProductCard from "../components/ProductCard";
-import ShortImg from "./images/short.png";
-import HoodImg from "./images/prodyhood.png";
+import ShortImg from '../assets/images/short.png';
+import HoodImg from '../assets/images/prodyhood.png';
 import NavBar from "../components/NavBar";
 
 const Products = () => {
