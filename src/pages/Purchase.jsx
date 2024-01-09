@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
-import PurchaseHoodie from "./images/purchasehoodie.png";
+import PurchaseHoodie from "../assets/images/purchasehoodie.png";
 import PurchaseImg from "../components/PurchaseImg";
 import SizeBtn from "../components/SizeBtn";
 import ColorBtn from "../components/ColorBtn";
 import PurchaseBtn from "../components/PurchaseBtn";
-import BuyIcon from "../components/images/buyIcon.svg"
-import BuyYIcon from "./images/buyYIcon.svg"
+import BuyIcon from "../assets/images/buyIcon.svg"
+import BuyYIcon from "../assets/images/buyYIcon.svg"
 import IncrementDecrementQ from "../components/IncrementDecrementQ";
 
 const Purchase = () => {

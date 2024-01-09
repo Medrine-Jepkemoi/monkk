@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MonkBadge from "./images/monkbadge.png";
+import MonkBadge from "../assets/images/monkbadge.png";
 import { FaSearch } from "react-icons/fa";
 import { HiMiniShoppingCart } from "react-icons/hi2";
 import { RiAccountCircleFill } from "react-icons/ri";

@@ -1,5 +1,5 @@
 import React from 'react'
-import SmallImages from '../pages/images/purchasehoodie.png'
+import SmallImages from '../assets/images/purchasehoodie.png' 
 
 const PurchaseImg = (props) => {
   return (

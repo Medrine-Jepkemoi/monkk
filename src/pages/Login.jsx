@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import TextInput from "../components/TextInput";
 import AuthenticationBtn from "../components/AuthenticationBtn";
-import AuthImage from "./images/fullimg.png";
-import MonkBadge from "./images/monkbadge.png";
+import AuthImage from '../assets/images/fullimg.png';
+import MonkBadge from '../assets/images/monkbadge.png';
 import {Link} from 'react-router-dom'
 
 const Login = () => {
