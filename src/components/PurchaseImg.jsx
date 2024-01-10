@@ -1,10 +1,10 @@
 import React from 'react'
-import SmallImages from '../assets/images/purchasehoodie.png' 
+// import SmallImages from '../assets/images/purchasehoodie.png' 
 
 const PurchaseImg = (props) => {
   return (
     <div>
-        <img src={SmallImages} alt={props.alt}  className='rounded-lg h-32 pb-4'/>
+        <img src={props.image} alt={props.title}  className='rounded-lg h-32 pb-4'/>
     </div>
   )
 }

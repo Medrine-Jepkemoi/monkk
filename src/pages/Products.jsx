@@ -42,23 +42,6 @@ const Products = () => {
           clickHandler={buy}
         />
         ))}
-        {/* <ProductCard
-          src={HoodImg}
-          alt="Hood Image"
-          label="Hoodies"
-          description="Get the monk Extra Comfortable hoodies"
-          id={1}
-          clickHandler={buy}
-        />
-
-        <ProductCard
-          src={ShortImg}
-          alt="Short Image"
-          label="Shorts"
-          description="Get the monk Extra Comfortable shorts"
-          id={2}
-          clickHandler={buy}
-        /> */}
       </div>
     </div>
   );
