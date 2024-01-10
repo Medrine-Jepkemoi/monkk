@@ -3,7 +3,7 @@ import BuyIcon from "../assets/images/buyIcon.svg"
 
 const ProductCard = (props) => {
   return (
-    <div className=" flex flex-col  h-full w-full">
+    <div key={props.id} className=" flex flex-col  h-full w-full">
       <img src={props.src} alt={props.alt} className="h-4/5 w-5/5"/>
       <div className="flex place-content-between w-5/5 my-2">
         <div>

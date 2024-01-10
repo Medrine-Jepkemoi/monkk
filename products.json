@@ -1,0 +1,20 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "title": "Hoodies",
+        "description": "Monk Cotton Hoodies",
+        "price": 2200,
+        "image": "images/prodyhood.png"
+      },
+
+      {
+        "id": 2,
+        "title": "Shorts",
+        "description": "Monk Cotton Shorts",
+        "price": 549,
+        "image": "images/short.png"
+      }
+      
+    ]
+  }

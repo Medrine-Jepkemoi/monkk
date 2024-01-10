@@ -25,6 +25,7 @@ function App() {
         <Route path="/products" element={<Products />} />
       </Routes> */}
       {/* <Purchase/> */}
+      <Products/>
       {/* <Home/> */}
       {/* <PurchaseImg/> */}
     </div>
