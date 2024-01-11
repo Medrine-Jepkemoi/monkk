@@ -6,8 +6,9 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import SignUp from "./pages/SignUp";
 import {Route, Routes, useParams} from "react-router-dom";
-import Purchase from "./pages/Purchase";
-import PurchaseImg from "./components/PurchaseImg";
+import Purchase from "./pages/ProductDetails";
+import PurchaseImg from "./components/ProductDetailsImg";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/purchase/:id" element={<Purchase/>}/>
+        <Route path="/purchase/:id" element={<ProductDetails/>}/>
       </Routes>
       {/* <Purchase/> */}
       {/* <Products/> */}

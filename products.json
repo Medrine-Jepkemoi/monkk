@@ -6,16 +6,16 @@
         "description": "Monk Cotton Hoodies",
         "more": "Unisex and can be worn during any weather",
         "price": 2200,
-        "image": "images/purchasehoodie.png"
+        "image": "http://localhost:3000/images/purchasehoodie.png"
       },
 
       {
         "id": 2,
         "title": "Shorts",
         "description": "Monk Cotton Shorts",
-        "more": "Comfortable and ideal for sunny days",
+        "more": "Comfortable and ideal for sunny",
         "price": 549,
-        "image": "images/short.png"
+        "image": "http://localhost:3000/images/short.png"
       }
       
     ]
