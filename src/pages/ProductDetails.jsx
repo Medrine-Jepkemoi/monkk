@@ -42,7 +42,7 @@ const ProductDetails = () => {
   } else {
     return (
       <div className="flex flex-col h-screen pt-20 pb-24">
-        <NavBar className="bg-slate-400" />
+        <NavBar />
 
         <div className="h-full w-screen flex">
           {/* Images */}

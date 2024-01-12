@@ -12,14 +12,9 @@ import ProductDetails from "./pages/ProductDetails";
 
 function App() {
 
-  // function PurchasePage (){
-  //   let {productId} = useParams()
-  // }
 
   return (
-    <div className="h-screen w-screen">
-      {/* <NavBar /> */}
-
+    <div className="h-screen w-screen overflow-scroll">
       <Routes>
         {/* <Route path="/" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
@@ -30,10 +25,6 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/purchase/:id" element={<ProductDetails/>}/>
       </Routes>
-      {/* <Purchase/> */}
-      {/* <Products/> */}
-      {/* <Home/> */}
-      {/* <PurchaseImg/> */}
     </div>
   );
 }
