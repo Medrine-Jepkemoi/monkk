@@ -2,20 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import ProductDetailsImg from "../components/ProductDetailsImg";
-import SizeBtn from "../components/SizeBtn";
 import ColorBtn from "../components/ColorBtn";
 import PurchaseBtn from "../components/PurchaseBtn";
 import BuyIcon from "../assets/images/buyIcon.svg";
 import BuyYIcon from "../assets/images/buyYIcon.svg";
 import IncrementDecrementQ from "../components/IncrementDecrementQ";
 
-
 const ProductDetails = () => {
   const [data, setdata] = useState({});
   const [loading, setLoading] = useState(true);
+  const [selectedSize, setSelectedSize] = useState("");
 
+  // Dynamic parameters
   const { id } = useParams();
-  
+
   useEffect(() => {
     fetch(`http://localhost:3000/products/${id}`)
       .then((res) => res.json())
@@ -25,28 +25,6 @@ const ProductDetails = () => {
       })
       .then(() => setLoading(false));
   }, []);
-
-  
-
-  // Size Btns Functionalities
-  const selectSmall = (e) => {
-    e.preventDefault();
-    console.log("Small size hoodie");
-  };
-
-  const selectMedium = (e) => {
-    e.preventDefault();
-    console.log("Medium size hoodie");
-  };
-
-  const selectLarge = (e) => {
-    e.preventDefault();
-    console.log("Large size hoodie");
-  };
-  const selectXLarge = (e) => {
-    e.preventDefault();
-    console.log("X-Large size hoodie");
-  };
 
   // Color Btns Functionalities
   const selectBlue = (e) => {
@@ -66,7 +44,7 @@ const ProductDetails = () => {
     console.log("Black color hoodie");
   };
 
-  //   Purchase Buttons Functionalities
+  //   Product Buttons Functionalities
   const placeOrder = (e) => {
     e.preventDefault();
     console.log("Order Placed");
@@ -95,7 +73,6 @@ const ProductDetails = () => {
               <ProductDetailsImg src={data.image} alt={data.title} />
               <ProductDetailsImg src={data.image} alt={data.title} />
               <ProductDetailsImg src={data.image} alt={data.title} />
-              
             </div>
 
             {/* Large Image */}
@@ -107,7 +84,8 @@ const ProductDetails = () => {
               />
             </div>
           </div>
-          {/* Purchase */}
+
+          {/* More Product Details */}
           <div className="w-1/2 h-full px-5 py-10 flex flex-col items-center">
             <div className="bg-white h-full w-2/3 flex flex-col justify-between ">
               <div>
@@ -123,10 +101,22 @@ const ProductDetails = () => {
                   Select Size
                 </p>
                 <div className=" flex justify-between">
-                  <SizeBtn id={1} clickHandler={selectSmall} value="Small" />
-                  <SizeBtn id={2} clickHandler={selectMedium} value="Medium" />
-                  <SizeBtn id={3} clickHandler={selectLarge} value="Large" />
-                  <SizeBtn id={4} clickHandler={selectXLarge} value="XLarge" />
+                  {/* Mapping through the array of sizes */}
+                  {data.size.map((size) => (
+                    <div
+                      // Conditional css based on which button has been clicked
+                      className={
+                        selectedSize === size
+                          ? "bg-black text-white border-2 border-black rounded-md h-12 w-20 text-center py-2"
+                          : "bg-white border-2 border-black rounded-md h-12 w-20 text-center py-2"
+                      }
+                      onClick={() => {
+                        setSelectedSize(size);
+                      }}
+                    >
+                      {size}
+                    </div>
+                  ))}
                 </div>
               </div>
               {/* Color Selection */}

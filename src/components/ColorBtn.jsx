@@ -8,7 +8,7 @@ const ColorBtn = (props) => {
         onClick={props.clickColor}
 
         // Style as a prop
-        className={`${props.bgColor} border-2 border-black rounded-md h-16 w-16`
+        className={`${props.bgColor} border-2 border-black rounded-md h-16 w-20`
         }
       ></button>
     </div>
