@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import ProductDetailsImg from "../components/ProductDetailsImg";
-import ColorBtn from "../components/ColorBtn";
 import PurchaseBtn from "../components/PurchaseBtn";
 import BuyIcon from "../assets/images/buyIcon.svg";
 import BuyYIcon from "../assets/images/buyYIcon.svg";
@@ -12,6 +11,7 @@ const ProductDetails = () => {
   const [data, setdata] = useState({});
   const [loading, setLoading] = useState(true);
   const [selectedSize, setSelectedSize] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
 
   // Dynamic parameters
   const { id } = useParams();
@@ -25,24 +25,6 @@ const ProductDetails = () => {
       })
       .then(() => setLoading(false));
   }, []);
-
-  // Color Btns Functionalities
-  const selectBlue = (e) => {
-    e.preventDefault();
-    console.log("Blue color hoodie");
-  };
-  const selectYellow = (e) => {
-    e.preventDefault();
-    console.log("Yellow color hoodie");
-  };
-  const selectWhite = (e) => {
-    e.preventDefault();
-    console.log("White color hoodie");
-  };
-  const selectBlack = (e) => {
-    e.preventDefault();
-    console.log("Black color hoodie");
-  };
 
   //   Product Buttons Functionalities
   const placeOrder = (e) => {
@@ -125,26 +107,23 @@ const ProductDetails = () => {
                   Select Color
                 </p>
                 <div className=" flex justify-between">
-                  <ColorBtn
-                    id={1}
-                    clickColor={selectBlue}
-                    bgColor="bg-cyan-500"
-                  />
-                  <ColorBtn
-                    id={2}
-                    clickColor={selectYellow}
-                    bgColor="bg-amber-300"
-                  />
-                  <ColorBtn
-                    id={3}
-                    clickColor={selectWhite}
-                    bgColor="bg-white"
-                  />
-                  <ColorBtn
-                    id={4}
-                    clickColor={selectBlack}
-                    bgColor="bg-gray-900"
-                  />
+                  {/* Mapping through the array of colors */}
+                  {data.color.map((color) => (
+                    <div
+                      id={color}
+                      className={
+                        `${selectedColor === color
+                          ? "border-2 border-black rounded-md h-16 w-20 shadow-lg shadow-black"
+                          : "border-2 border-black rounded-md h-16 w-20"} ${color === "Blue" ? "bg-cyan-500" : ""} ${color === "Yellow" ? "bg-amber-300" : ""} ${color === "White" ? "bg-white" : ""} ${color === "Black" ? "bg-gray-900" : ""}` 
+
+                      } 
+                      onClick={() => {
+                        setSelectedColor(color);
+                      }}
+                    >
+                      {/* {color} */}
+                    </div>
+                  ))}
                 </div>
               </div>
               <div>
