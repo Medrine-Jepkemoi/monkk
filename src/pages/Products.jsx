@@ -21,17 +21,17 @@ const Products = () => {
     <div>Loading.....</div>;
   } else {
     return (
-      <div className="h-screen w-screen  ">
+      <div className='h-screen w-screen  '>
         <NavBar />
 
-        <div className="h-[90%] pt-20 p-8">
-          <div className="h-1/5 bg-gray-200 flex items-center justify-center">
-            <p className="text-center text-4xl font-extrabold ">
+        <div className='h-[90%] pt-20 p-8'>
+          <div className='h-1/5 bg-gray-200 flex items-center justify-center'>
+            <p className='text-center text-4xl font-extrabold '>
               THE MONK’s COLLECTION
             </p>
           </div>
 
-          <div className="flex h-4/5 mx-4 my-2 gap-12">
+          <div className='flex h-4/5 mx-4 my-2 gap-12'>
             {products.map((product) => (
               <ProductCard
                 key={product.id}
