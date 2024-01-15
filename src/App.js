@@ -9,6 +9,7 @@ import { Route, Routes } from "react-router-dom";
 import Purchase from "./pages/ProductDetails";
 import PurchaseImg from "./components/ProductDetailsImg";
 import ProductDetails from "./pages/ProductDetails";
+import Cart from "./pages/Cart";
 import { CartContext, ShoppingCartContext } from "./context/CartContext";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path='/aboutus' element={<AboutUs />} />
           <Route path='/products' element={<Products />} />
           <Route path='/purchase/:id' element={<ProductDetails />} />
+          <Route path='/cart' element={<Cart />} />
         </Routes>
       </div>
     </CartContext>

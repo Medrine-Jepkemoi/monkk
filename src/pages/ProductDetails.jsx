@@ -30,17 +30,19 @@ const ProductDetails = () => {
   }, []);
 
   //   Add to Cart
-  const placeOrder = (e) => {
+  const addToCart = (e) => {
     e.preventDefault();
     console.log("Order Placed");
     const newCartItem = {
       productID: data.id,
+      productTitle: data.title,
+      productPrice: data.price,
       productSize: selectedSize,
       productColor: selectedColor,
       productImage: data.image,
       quantity: cart.count,
     };
-    console.log(newCartItem);
+    // console.log(newCartItem);
     cart.addProduct(newCartItem);
   };
 
@@ -149,6 +151,7 @@ const ProductDetails = () => {
                   count={cart.count}
                   addQuantity={cart.addQuantity}
                   reduceQuantity={cart.reduceQuantity}
+                  width='w-1/4'
                 />
               </div>
 
@@ -156,20 +159,20 @@ const ProductDetails = () => {
               <div className='flex flex-col gap-4'>
                 <PurchaseBtn
                   id={1}
-                  handlePurchase={placeOrder}
+                  handlePurchase={addToCart}
                   icon={BuyYIcon}
-                  label='Place Order'
+                  label='Add to Cart'
                   bgColor='bg-gray-900'
                   textColor='text-amber-300'
                 />
-                <PurchaseBtn
+                {/* <PurchaseBtn
                   id={2}
                   handlePurchase={addFavorite}
                   icon={BuyIcon}
                   label='Add to Favorites'
                   bgColor='bg-white'
                   textColor='texttrueGray-900'
-                />
+                /> */}
               </div>
             </div>
           </div>

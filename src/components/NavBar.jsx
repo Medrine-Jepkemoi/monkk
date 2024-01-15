@@ -51,8 +51,10 @@ const NavBar = () => {
           <FaSearch onClick={showSearchBar} />
         </li>
         <li>
-          <HiMiniShoppingCart />
-          {cart.cartItems.length}
+          <Link to='/cart'>
+            <HiMiniShoppingCart />
+            {cart.cartItems.length}
+          </Link>
         </li>
         <li>
           <RiAccountCircleFill />
