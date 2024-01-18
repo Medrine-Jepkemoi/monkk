@@ -8,6 +8,7 @@ export const CartContext = (props) => {
   const [count, setCount] = useState(0);
   const [itemTotal, setItemTotal] = useState(0);
 
+  // Persistence
   useEffect(() => {
     localStorage.setItem("cartItem", JSON.stringify(cartItems));
   }, [cartItems]);
