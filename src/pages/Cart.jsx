@@ -67,6 +67,7 @@ const Cart = () => {
               {" "}
               Remove
             </button>
+            <p>{cart.itemTotal}</p>
           </div>
         ))}
       </div>

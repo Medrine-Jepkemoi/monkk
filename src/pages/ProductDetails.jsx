@@ -41,6 +41,7 @@ const ProductDetails = () => {
       productColor: selectedColor,
       productImage: data.image,
       quantity: cart.count,
+      itemTotal: cart.itemTotal,
     };
     console.log(newCartItem);
     cart.addProduct(newCartItem);
