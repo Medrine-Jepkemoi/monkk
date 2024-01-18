@@ -42,7 +42,7 @@ const ProductDetails = () => {
       productImage: data.image,
       quantity: cart.count,
     };
-    // console.log(newCartItem);
+    console.log(newCartItem);
     cart.addProduct(newCartItem);
   };
 

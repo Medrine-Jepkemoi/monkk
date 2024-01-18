@@ -24,9 +24,25 @@ export const CartContext = (props) => {
     }
   };
 
+  // Update product price based on quantity
+  const updatePrice = () => {};
+
+  // Remove item from cart
+  const removeProduct = (productId) => {
+    setCartItems((prev) => prev.filter((item) => item.productID !== productId));
+    // console.log(prev);
+  };
+
   return (
     <ShoppingCartContext.Provider
-      value={{ cartItems, addProduct, count, addQuantity, reduceQuantity }}
+      value={{
+        cartItems,
+        addProduct,
+        count,
+        addQuantity,
+        reduceQuantity,
+        removeProduct,
+      }}
     >
       {props.children}
     </ShoppingCartContext.Provider>

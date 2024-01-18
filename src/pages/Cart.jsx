@@ -7,13 +7,14 @@ import { RiDeleteBinLine } from "react-icons/ri";
 const Cart = () => {
   const cart = useContext(ShoppingCartContext);
 
-  console.log(cart.cartItems);
+  //   console.log(cart.cartItems);
+
   return (
     <div>
       <NavBar />
       <div className='h-[90%] w-screen pt-20 '>
         <p>My Cart</p>
-        <div className='bg-red-200 flex justify-between p-5 w-3/5'>
+        {/* <div className='bg-red-200 flex justify-between p-5 h-64 w-3/5'>
           <div className='w-1/4  bg-orange-300 flex justify-center'>
             <img
               className='h-36 w-30'
@@ -46,15 +47,11 @@ const Cart = () => {
             <p className='text-base font-semibold flex justify-between'>
               Total: <span className='font-light'>ksh 550</span>
             </p>
-
-            {/* <button className='text-base rounded-md border-black border-2 h-10 w-1/2 '>
-              Remove
-            </button> */}
           </div>
-        </div>
+        </div> */}
 
-        {/* {cart.cartItems.map((cartItem) => (
-          <div>
+        {cart.cartItems.map((cartItem) => (
+          <div key={cartItem.productID}>
             <img src={cartItem.productImage} />
             <p>{cartItem.productTitle}</p>
             <p>{cartItem.productSize}</p>
@@ -66,9 +63,12 @@ const Cart = () => {
               addQuantity={cart.addQuantity}
               reduceQuantity={cart.reduceQuantity}
             />
-            <button> Remove</button>
-          </div> */}
-        {/* ))} */}
+            <button onClick={() => cart.removeProduct(cartItem.productID)}>
+              {" "}
+              Remove
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );
