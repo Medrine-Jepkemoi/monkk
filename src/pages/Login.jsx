@@ -18,7 +18,7 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:3030/user`, {
+    fetch(`http://localhost:4000/user`, {
       method: "POST",
       body: JSON.stringify({
         email: email,

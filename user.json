@@ -1,0 +1,17 @@
+{
+  "user": [
+    {
+      "firstName": "Medrine",
+      "lastName": "Jepkemoi",
+      "email": "jepkemoimedrine@gmail.com",
+      "password": "Medrine.",
+      "phoneNumber": "+254723242526",
+      "id": 1
+    },
+    {
+      "email": "jepkemoimedrine@gmail.com",
+      "password": "Medrine.",
+      "id": 2
+    }
+  ]
+}

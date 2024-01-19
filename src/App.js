@@ -17,9 +17,12 @@ function App() {
     <CartContext>
       <div className='h-screen w-screen overflow-scroll'>
         <Routes>
-          {/* <Route path="/" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/login/forgotpassword" element={<EmailForgotPassword />} /> */}
+          <Route path='/signup' element={<SignUp />} />
+          <Route path='/login' element={<Login />} />
+          <Route
+            path='/login/forgotpassword'
+            element={<EmailForgotPassword />}
+          />
 
           <Route path='/' element={<Home />} />
           <Route path='/aboutus' element={<AboutUs />} />

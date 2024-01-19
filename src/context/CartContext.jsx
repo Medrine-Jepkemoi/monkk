@@ -31,16 +31,6 @@ export const CartContext = (props) => {
     }
   };
 
-  // Update product price based on quantity
-  // const updatePrice = () => {
-  //   setItemTotal((prev) =>
-  //     prev.map((item) => ({
-  //       ...item,
-  //       total: item.price * item.quantity,
-  //     }))
-  //   );
-  // };
-
   // Remove item from cart
   const removeProduct = (productId) => {
     setCartItems((prev) => prev.filter((item) => item.productID !== productId));
@@ -56,7 +46,6 @@ export const CartContext = (props) => {
         addQuantity,
         reduceQuantity,
         removeProduct,
-        // updatePrice,
         itemTotal,
       }}
     >
