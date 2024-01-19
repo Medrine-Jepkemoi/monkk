@@ -11,99 +11,67 @@ const Cart = () => {
   //   console.log(cart.cartItems);
 
   return (
-    <div>
+    <div className='h-screen w-screen pt-20'>
       <NavBar />
-      <div className='h-[90%] w-screen pt-20 '>
-        <div>
-          <p>My Cart</p>
+      <div className=' h-full w-screen flex px-20'>
+        <div className=' w-2/3 h-full '>
+          <p className='text-2xl font-semibold text-center py-5'>My Cart</p>
+          <div className='flex flex-col gap-6 w-full '>
+            {cart.cartItems.map((cartItem) => (
+              <div key={cartItem.productID} className='h-[10%] flex w-full'>
+                <div className=' w-1/4 '>
+                  <img src={cartItem.productImage} className='h-36 w-1/2' />
+                </div>
 
-          {cart.cartItems.map((cartItem) => (
-            <div
-              key={cartItem.productID}
-              className=' flex justify-between p-5 h-48 w-3/5'
-            >
-              <div className='w-1/4  flex justify-center items-center'>
-                <img className='h-36 w-30' src={cartItem.productImage} />
-              </div>
+                <div className=' w-2/4 text-base font-normal  flex flex-col justify-between'>
+                  <p className='text-xl font-medium'>{cartItem.productTitle}</p>
+                  <p className='flex gap-8'>{cartItem.productSize}</p>
+                  <p>{cartItem.productColor}</p>
+                  <div className='flex justify-between w-full'>
+                    <IncrementDecrementQ
+                      count={cart.count}
+                      addQuantity={cart.addQuantity}
+                      reduceQuantity={cart.reduceQuantity}
+                      width='w-1/3'
+                    />
+                    <RiDeleteBinLine
+                      onClick={() => cart.removeProduct(cartItem.productID)}
+                      className='w-1/3 h-10'
+                    />
+                  </div>
+                </div>
 
-              <div className=' w-1/4 flex flex-col justify-between'>
-                <p className='text-xl font-semibold'>
-                  {" "}
-                  {cartItem.productTitle}
-                </p>
-                <p className='text-base font-semibold flex justify-between'>
-                  Size:{" "}
-                  <span className='font-light'>{cartItem.productSize}</span>
-                </p>
-                <p className='text-base font-semibold flex justify-between'>
-                  Color:{" "}
-                  <span className='font-light'>{cartItem.productColor}</span>
-                </p>
-                <div className='flex justify-between'>
-                  <IncrementDecrementQ
-                    count={cart.count}
-                    addQuantity={cart.addQuantity}
-                    reduceQuantity={cart.reduceQuantity}
-                    width='w-1/2'
-                  />
-                  <RiDeleteBinLine
-                    className='h-10 w-8 '
-                    onClick={() => cart.removeProduct(cartItem.productID)}
-                  />
+                <div className=' w-1/4 '>
+                  {/* <p>
+                  Item Price:
+                  <span>{cartItem.productPrice}</span>
+                </p> */}
+                  <p className='text-base font-medium text-center'>ksh 550</p>
                 </div>
               </div>
-              <div className='w-1/4 h-1/3 flex flex-col justify-between '>
-                <p className='text-base font-semibold flex justify-between'>
-                  Item Price:{" "}
-                  <span className='font-light'>{cartItem.productPrice}</span>
-                </p>
-                <p className='text-base font-semibold flex justify-between'>
-                  Total: <span className='font-light'>ksh 550</span>
-                </p>
-              </div>
-            </div>
-          ))}
-          <div className='w-3/5 p-5'>
-            <p className='text-2xl font-semibold flex justify-between pb-4 '>
-              Order Summary
-            </p>
-            <p className='text-base font-semibold flex justify-between pb-4'>
-              Total: <span className='font-light'>ksh: 30,000</span>
-            </p>
-            <div className='w-3/5 flex justify-between gap-20'>
-              <Link className='rounded-md border-2 border-black  bg-gray-900 text-amber-300 h-16 w-1/2 text-xl font-semibold py-3 px-2'>
-                Proceed to Checkout
-              </Link>
-              <Link
-                to='/products'
-                className='rounded-md border-2 border-black bg-gray-900 text-amber-300 h-16 w-1/2 text-xl font-semibold py-3 px-2'
-              >
-                Continue Shopping
-              </Link>
-            </div>
+            ))}
           </div>
         </div>
+        <div className='flex flex-col justify-between w-1/3 h-[35%] '>
+          <p className='text-2xl font-semibold text-center py-5'>
+            Order Summary
+          </p>
 
-        {/* {cart.cartItems.map((cartItem) => (
-          <div key={cartItem.productID}>
-            <img src={cartItem.productImage} />
-            <p>{cartItem.productTitle}</p>
-            <p>{cartItem.productSize}</p>
-            <p>{cartItem.productColor}</p>
-            <p>{cartItem.quantity}</p>
-            <p>{cartItem.productPrice}</p>
-            <IncrementDecrementQ
-              count={cart.count}
-              addQuantity={cart.addQuantity}
-              reduceQuantity={cart.reduceQuantity}
-            />
-            <button onClick={() => cart.removeProduct(cartItem.productID)}>
-              {" "}
-              Remove
-            </button>
-            <p>{cart.itemTotal}</p>
+          <p className='flex justify-between text-base font-normal'>
+            Total <span>ksh 30,000</span>
+          </p>
+          <div className='flex flex-col gap-5  w-full items-center '>
+            <Link className='rounded-md border-2 border-black h-12 w-2/3 bg-gray-900 text-center text-amber-300 py-2'>
+              Proceed to Checkout
+            </Link>
+            <Link
+              to='/products'
+              className='rounded-md border-2 border-black h-12 w-2/3 bg-gray-900 text-center text-amber-300 py-2'
+            >
+              Continue Shopping
+            </Link>
           </div>
-        ))} */}
+        </div>
       </div>
     </div>
   );
