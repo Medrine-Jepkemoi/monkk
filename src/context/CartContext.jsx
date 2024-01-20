@@ -6,7 +6,7 @@ const cartFromLocalStorage = JSON.parse(localStorage.getItem("cartItem") || []);
 export const CartContext = (props) => {
   const [cartItems, setCartItems] = useState(cartFromLocalStorage);
   const [count, setCount] = useState(0);
-  const [itemTotal, setItemTotal] = useState(0);
+  const [itemId, setItemId] = useState(1);
 
   // Persistence
   useEffect(() => {
@@ -32,8 +32,8 @@ export const CartContext = (props) => {
   };
 
   // Remove item from cart
-  const removeProduct = (productId) => {
-    setCartItems((prev) => prev.filter((item) => item.productID !== productId));
+  const removeProduct = (itemId) => {
+    setCartItems((prev) => prev.filter((item) => item.itemID !== itemId));
     // console.log(prev);
   };
 
@@ -46,7 +46,6 @@ export const CartContext = (props) => {
         addQuantity,
         reduceQuantity,
         removeProduct,
-        itemTotal,
       }}
     >
       {props.children}

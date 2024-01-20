@@ -18,7 +18,7 @@ const Cart = () => {
           <p className='text-2xl font-semibold text-center py-5'>My Cart</p>
           <div className='flex flex-col gap-6 w-full '>
             {cart.cartItems.map((cartItem) => (
-              <div key={cartItem.productID} className='h-[10%] flex w-full'>
+              <div key={cartItem.itemID} className='h-[10%] flex w-full'>
                 <div className=' w-1/4 '>
                   <img src={cartItem.productImage} className='h-36 w-1/2' />
                 </div>
@@ -35,7 +35,7 @@ const Cart = () => {
                       width='w-1/3'
                     />
                     <RiDeleteBinLine
-                      onClick={() => cart.removeProduct(cartItem.productID)}
+                      onClick={() => cart.removeProduct(cartItem.itemID)}
                       className='w-1/3 h-10'
                     />
                   </div>

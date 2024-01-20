@@ -33,7 +33,11 @@ const ProductDetails = () => {
   const addToCart = (e) => {
     e.preventDefault();
     console.log("Order Placed");
+
     const newCartItem = {
+      // itemID: Math.floor(Math.random() * 100),
+      // Generates item ID
+      itemID: cart.cartItems.length === 0 ? 0 : cart.cartItems.length,
       productID: data.id,
       productTitle: data.title,
       productPrice: data.price,
