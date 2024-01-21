@@ -13,6 +13,7 @@ const ProductDetails = () => {
   const [loading, setLoading] = useState(true);
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
+  const [count, setCount] = useState(0);
 
   // Context Variable
   const cart = useContext(ShoppingCartContext);
@@ -29,6 +30,20 @@ const ProductDetails = () => {
       .then(() => setLoading(false));
   }, []);
 
+  // Increase quantity of product
+  const addQuantity = () => {
+    if (count < 200) {
+      setCount((prevState) => prevState + 1);
+    }
+  };
+
+  // Decrease quantity of product
+  const reduceQuantity = () => {
+    if (count > 0) {
+      setCount((prevState) => prevState - 1);
+    }
+  };
+
   //   Add to Cart
   const addToCart = (e) => {
     e.preventDefault();
@@ -44,7 +59,7 @@ const ProductDetails = () => {
       productSize: selectedSize,
       productColor: selectedColor,
       productImage: data.image,
-      quantity: cart.count,
+      quantity: count,
       itemTotal: cart.itemTotal,
     };
     console.log(newCartItem);
@@ -153,9 +168,9 @@ const ProductDetails = () => {
                   Select Quantity
                 </p>
                 <IncrementDecrementQ
-                  count={cart.count}
-                  addQuantity={cart.addQuantity}
-                  reduceQuantity={cart.reduceQuantity}
+                  count={count}
+                  addQuantity={() => addQuantity()}
+                  reduceQuantity={() => reduceQuantity()}
                   width='w-1/4'
                 />
               </div>

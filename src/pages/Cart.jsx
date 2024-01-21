@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import NavBar from "../components/NavBar";
 import IncrementDecrementQ from "../components/IncrementDecrementQ";
 import { ShoppingCartContext } from "../context/CartContext";
@@ -8,7 +8,20 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const cart = useContext(ShoppingCartContext);
 
-  //   console.log(cart.cartItems);
+  const [quantity, setQuantity] = useState();
+
+  // Increase quantity of product
+  const addQuantity = () => {
+    if (quantity < 200) {
+      setQuantity((prevState) => prevState + 1);
+    }
+  };
+  // Decrease quantity of product
+  const reduceQuantity = () => {
+    if (quantity > 0) {
+      setQuantity((prevState) => prevState - 1);
+    }
+  };
 
   return (
     <div className='h-screen w-screen pt-20'>
@@ -29,9 +42,13 @@ const Cart = () => {
                   <p>{cartItem.productColor}</p>
                   <div className='flex justify-between w-full'>
                     <IncrementDecrementQ
-                      count={cart.count}
-                      addQuantity={cart.addQuantity}
-                      reduceQuantity={cart.reduceQuantity}
+                      count={cartItem.quantity}
+                      addQuantity={() =>
+                        cart.addCartItemQuantity(cartItem.itemID)
+                      }
+                      reduceQuantity={() =>
+                        cart.reduceCartItemQuantity(cartItem.itemID)
+                      }
                       width='w-1/3'
                     />
                     <RiDeleteBinLine

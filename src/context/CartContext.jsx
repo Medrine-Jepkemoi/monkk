@@ -5,8 +5,6 @@ const cartFromLocalStorage = JSON.parse(localStorage.getItem("cartItem") || []);
 
 export const CartContext = (props) => {
   const [cartItems, setCartItems] = useState(cartFromLocalStorage);
-  const [count, setCount] = useState(0);
-  const [itemId, setItemId] = useState(1);
 
   // Persistence
   useEffect(() => {
@@ -18,23 +16,27 @@ export const CartContext = (props) => {
     setCartItems((prev) => [...prev, newCartProduct]);
   };
 
-  // Increase quantity of product
-  const addQuantity = () => {
-    if (count < 200) {
-      setCount((prevState) => prevState + 1);
-    }
-  };
-  // Increase quantity of product
-  const reduceQuantity = () => {
-    if (count > 0) {
-      setCount((prevState) => prevState - 1);
-    }
-  };
-
   // Remove item from cart
   const removeProduct = (itemId) => {
     setCartItems((prev) => prev.filter((item) => item.itemID !== itemId));
     // console.log(prev);
+  };
+
+  // Add cart item quantity
+  const addCartItemQuantity = (itemId) => {
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.itemID === itemId ? { ...item, quantity: item.quantity++ } : item
+      )
+    );
+  };
+
+  const reduceCartItemQuantity = (itemId) => {
+    setCartItems((prev) =>
+      prev.map((item) =>
+        item.itemID === itemId ? { ...item, quantity: item.quantity-- } : item
+      )
+    );
   };
 
   return (
@@ -42,10 +44,9 @@ export const CartContext = (props) => {
       value={{
         cartItems,
         addProduct,
-        count,
-        addQuantity,
-        reduceQuantity,
         removeProduct,
+        addCartItemQuantity,
+        reduceCartItemQuantity,
       }}
     >
       {props.children}
